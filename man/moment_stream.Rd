@@ -38,6 +38,5 @@ x2 = rnorm(1E3)
 moments$update(x2)
 all.equal(moments$m, mean(c(x, x2)))
 all.equal(moments$v_hat, mean(c(x, x2)))
-
 }
 \keyword{datasets}

@@ -16,6 +16,8 @@
 #' sample mean is stored in \code{stream_name$m} and the sample variance is
 #' stored in \code{stream_name$v_hat}.
 #'
+#' @export moment_stream
+#'
 #' @examples
 #' library(Heraclitus)
 #' set.seed(1)
@@ -28,9 +30,6 @@
 #' moments$update(x2)
 #' all.equal(moments$m, mean(c(x, x2)))
 #' all.equal(moments$v_hat, mean(c(x, x2)))
-#'
-#' @export moment_stream
-#' @exportClass moment_stream
 moment_stream = R6::R6Class(classname = "moment_stream",
                         public = list(
                           m = NULL,
