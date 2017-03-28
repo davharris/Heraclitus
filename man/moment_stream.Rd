@@ -19,8 +19,15 @@ complete data set, which is difficult when the data does not fit in memory
 or when only parts of it are available, \code{moment_stream}s use Welford's
 online algorithm to calculate these values during a single pass through the
 data (which can then be discarded if no other summary statistics are needed).
+
+A stream can be monitored by creating an object with
+\code{stream_name = moment_stream$new()}, and the mean and variance can be
+calculated as new data comes in using \code{stream_name$update(x)}. The
+sample mean is stored in \code{stream_name$m} and the sample variance is
+stored in \code{stream_name$v_hat}.
 }
 \examples{
+library(Heraclitus)
 set.seed(1)
 x = rnorm(1E4)
 moments = moment_stream$new(x)
